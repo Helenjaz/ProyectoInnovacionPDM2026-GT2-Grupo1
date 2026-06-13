@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/lblTituloTraduciendo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TRADUCIENDO DE: NÁHUAT"
+            android:textSize="18sp"
+            android:textColor="#333333"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <EditText
+                android:id="@+id/txtInput"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:hint="Ingrese texto o use los iconos"
+                android:gravity="top"
+                android:padding="12dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="44dp"
+                android:background="@drawable/edit_text_border"
+                android:layout_toStartOf="@+id/llButtons"
+                android:layout_marginEnd="8dp"/>
+
+            <ImageButton
+                android:id="@+id/btnClear"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_alignEnd="@id/txtInput"
+                android:layout_alignTop="@id/txtInput"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="Limpiar texto"
+                android:visibility="gone"
+                app:tint="#999999"/>
+
+            <LinearLayout
+                android:id="@+id/llButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnMicrofono"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/ic_btn_speak_now"
+                    app:fabSize="mini"
+                    app:backgroundTint="#4DB6AC"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="Reconocimiento de voz"/>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnCamara"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/ic_menu_camera"
+                    app:fabSize="mini"
+                    app:backgroundTint="#81D4FA"
+                    android:contentDescription="Reconocimiento de imagen"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#EEEEEE"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/lblResultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Resultado"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:padding="10dp"
+            android:background="#E0F2F1"/>
+
+        <ProgressBar
+            android:id="@+id/progressTraduccion"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="gone"
+            android:layout_marginTop="-8dp" />
+
+        <ImageButton
+            android:id="@+id/btnEscuchar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_lock_silent_mode_off"
+            app:tint="#00796B"
+            android:contentDescription="Escuchar pronunciación" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ESPAÑOL"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:textColor="#666666"
+            android:layout_marginBottom="24dp"/>
+
+        <Button
+            android:id="@+id/btnRegresar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Regresar al Menú"
+            android:textAllCaps="false"
+            android:backgroundTint="#757575"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="12dp"
+            app:cornerRadius="28dp"
+            android:drawableEnd="@android:drawable/ic_menu_revert"/>
+
+        <Button
+            android:id="@+id/btnGenerarPdf"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Generar Reporte PDF"
+            android:textAllCaps="false"
+            android:backgroundTint="#00796B"
+            android:textColor="#FFFFFF"
+            app:cornerRadius="28dp"
+            android:drawableEnd="@android:drawable/ic_menu_save"/>
+
+
+    </LinearLayout>
+</ScrollView>

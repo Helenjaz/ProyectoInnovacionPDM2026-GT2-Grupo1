@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/viewFinder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <View
+        android:id="@+id/overlay"
+        android:layout_width="320dp"
+        android:layout_height="180dp"
+        android:background="@drawable/border_camera_focus"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/lblInstruccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enfoca el texto y captura"
+        android:textColor="#FFFFFF"
+        android:background="#80000000"
+        android:padding="8dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/overlay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Control de Zoom -->
+    <SeekBar
+        android:id="@+id/zoomBar"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:max="100"
+        android:progress="10"
+        app:layout_constraintBottom_toTopOf="@+id/btnCapturar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnCapturar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:src="@android:drawable/ic_menu_camera"
+        app:backgroundTint="#00796B"
+        app:tint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="Capturar" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnFlash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@android:drawable/ic_menu_day"
+        app:fabSize="mini"
+        app:backgroundTint="#80000000"
+        app:tint="#FFFFFF"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="Flash" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnRegresarCamara"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@android:drawable/ic_menu_revert"
+        app:fabSize="mini"
+        app:backgroundTint="#80000000"
+        app:tint="#FFFFFF"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="Regresar" />
+
+    <ProgressBar
+        android:id="@+id/progressCargando"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

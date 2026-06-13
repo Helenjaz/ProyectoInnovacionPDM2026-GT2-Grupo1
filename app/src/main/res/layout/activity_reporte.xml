@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F5F7F8">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:id="@+id/imgLogoReporte"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/logo_ues"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerInside"
+            android:contentDescription="Logotipo UES"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="REPORTE DE TRADUCCIÓN"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="24dp"
+            android:textColor="#00796B"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="24dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Resumen de Traducción"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="16dp"
+                    android:textColor="#00796B"/>
+
+                <TextView
+                    android:id="@+id/lblOriginalResumen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Texto Original"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="12dp"
+                    android:textColor="#333333"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#EEEEEE"
+                    android:layout_marginBottom="12dp"/>
+
+                <TextView
+                    android:id="@+id/lblTraduccionResumen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Traducción"
+                    android:textSize="14sp"
+                    android:textColor="#333333"
+                    android:textStyle="italic"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <EditText
+            android:id="@+id/txtCorreoDestinatario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Correo del destinatario"
+            android:padding="16dp"
+            android:background="@drawable/edit_text_border"
+            android:layout_marginBottom="32dp"
+            android:inputType="textEmailAddress"/>
+
+        <Button
+            android:id="@+id/btnGenerarEnviar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Generar y Enviar PDF"
+            android:textAllCaps="false"
+            android:backgroundTint="#00796B"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="12dp"
+            app:cornerRadius="28dp"
+            android:drawableEnd="@android:drawable/ic_menu_send"/>
+
+        <Button
+            android:id="@+id/btnRegresarReporte"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Regresar al Traductor"
+            android:textAllCaps="false"
+            android:backgroundTint="#757575"
+            android:textColor="#FFFFFF"
+            app:cornerRadius="28dp"
+            android:drawableEnd="@android:drawable/ic_menu_revert"/>
+
+    </LinearLayout>
+</ScrollView>
